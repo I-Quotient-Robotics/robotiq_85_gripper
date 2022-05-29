@@ -1,0 +1,12 @@
+<!-- Launch file for Segway platform startup -->
+<launch>
+
+  <node pkg="robotiq_85_driver" type="robotiq_85_driver" name="robotiq_85_driver" respawn="true" output="screen">
+    <param name="num_grippers" value="1"/>
+    <param name="comport" value="/dev/gripper_com"/>
+    <param name="baud" value="115200"/>
+    <param name="prefix" value=""/>
+    <remap from="/gripper/joint_states" to="/joint_states"/>
+  </node>
+
+</launch>
